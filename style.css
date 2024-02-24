@@ -1,0 +1,136 @@
+/* Base styles */
+body {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #940194; /* Julia purple */
+  color: #ffffff; /* Julia white */
+}
+
+/* Header */
+header {
+  background-color: #434A54; /* Julia blue */
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #617C9A; /* Julia green */
+  font-size: 2em;
+  margin: 0;
+  text-align: center;
+}
+
+/* Main sections */
+main {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/* Email subscription */
+.email-subscription {
+  width: 45%;
+  background-color: #940194; /* Darker purple */
+  border-radius: 10px;
+  padding: 20px;
+ /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
+  font-size: 20px;
+}
+
+.email-subscription h2,
+.email-subscription p {
+  margin-bottom: 10px;
+}
+
+.email-subscription form {
+  display: flex;
+  align-items: center;
+}
+
+.email-subscription input {
+  padding: 20px;
+  background-color: #282c34;
+  color: #617C9A;
+  border: 1px solid #617C9A;
+  border-radius: 5px;
+  flex-grow: 1;
+  margin-right: 10px;
+  font-size: large;
+}
+
+.email-subscription button {
+  background-color: #00a57c; /* Julia green */
+  color: #ffffff; /* Julia white */
+  padding: 20px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+}
+
+
+/* Articles & Tutorials */
+.articles-tutorials {
+  width: 45%;
+  background: linear-gradient(to bottom, #1e2128, #282c34); /* Gradient background */
+  color: #617C9A;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll; /* Enable scrolling */
+  height: 700px;
+  max-height: 700px; /* Optional height limit */
+  justify-content: space-between;
+}
+
+.articles-tutorials h2 {
+  margin-bottom: 10px;
+  color: #00a57c;
+  font-size: 20px;
+}
+
+.article-container {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.article-container h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #940194;
+  font-size: 30px;
+}
+
+/* ... (rest of your styles) */
+
+/* Typewriter effect for title */
+body {
+  background-color:#940194;
+  color:#940194;
+  padding-top:3em;
+  font-family: monospace;
+}
+
+* { color:#fff; text-decoration: none;}
+
+
+/* Estiliza a barra de rolagem em navegadores baseados em WebKit (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #617C9A; /* Cor do fundo da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #282c34; /* Cor da alça (barra) da rolagem */
+}
+
+
+.articles-tutorials h2 span {
+  font-size: 10px;
+  color: #617C9A;
+  margin-left: 10px;
+}

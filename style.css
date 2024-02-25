@@ -3,7 +3,7 @@ body {
   font-family: monospace;
   margin: 0;
   padding: 0;
-  background-color: #940194; /* Julia purple */
+  background-color: #49015f; /* Julia purple */
   color: #ffffff; /* Julia white */
 }
 
@@ -31,14 +31,17 @@ main {
 /* Email subscription */
 .email-subscription {
   width: 45%;
-  background-color: #940194; /* Darker purple */
+  background-color: #49015f; /* Darker purple */
   border-radius: 10px;
   padding: 20px;
  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
-  font-size: 20px;
+  font-size: 40px;
 }
 
-.email-subscription h2,
+.email-subscription h2 {
+  color: #ffda89;
+}
+
 .email-subscription p {
   margin-bottom: 10px;
 }
@@ -98,7 +101,7 @@ main {
 .article-container h3 {
   font-weight: bold;
   margin-bottom: 5px;
-  color: #940194;
+  color: #ffda89;
   font-size: 30px;
 }
 
@@ -106,8 +109,8 @@ main {
 
 /* Typewriter effect for title */
 body {
-  background-color:#940194;
-  color:#940194;
+  background-color:#49015f;
+  color:#49015f;
   padding-top:3em;
   font-family: monospace;
 }
@@ -121,11 +124,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #617C9A; /* Cor do fundo da barra de rolagem */
+  background-color: #282c34; /* Cor do fundo da barra de rolagem */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #282c34; /* Cor da alça (barra) da rolagem */
+  background-color: #617C9A; /* Cor da alça (barra) da rolagem */
 }
 
 
@@ -133,4 +136,12 @@ body {
   font-size: 10px;
   color: #617C9A;
   margin-left: 10px;
+}
+
+footer {
+  background-color:#49015f;
+  color:#ffffff;
+  padding-top:3em;
+  font-family: monospace;
+  text-align: center;
 }

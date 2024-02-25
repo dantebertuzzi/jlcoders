@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Definindo metadados da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluindo folhas de estilo -->
+    <link rel="stylesheet" href="post1.css">
+    <!-- Definindo o título da página -->
+    <title>jlCoder's | Movendo arquivos com julia</title>
+</head>
+<body>
+    <h1>
+        <a href="/index.html" class="typewrite" data-period="2000" data-type='[ "jlCoders", "julia para business.", "julia para ciência de dados.", "julia para machine learning." ]'>
+            <span class="wrap"></span>
+        </a>
+    </h1>
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="image-container">
+            <!-- Incluindo imagem relacionada à matéria -->
+            <img src="/posts/img/post1.png" alt="Imagem da Matéria" class="header-image">
+        </div>
+        <!-- Título da postagem -->
+        <h1>COMO USAR O PACOTE FILEPATHS PARA MOVER ARQUIVOS EM JULIA?</h1>
+        <!-- Subtítulo da postagem -->
+        <h2>Mover arquivos é uma tarefa comum no dia a dia de muitos profissionais, especialmente aqueles que trabalham com dados.</h2>
+        <!-- Informações sobre o autor, tempo de leitura e data de publicação -->
+        <div class="meta-info">
+            <span>
+                <img width="20" height="20" src="https://img.icons8.com/glyph-neue/64/EBEBEB/user--v1.png" alt="user--v1"/>
+                Autor: Dante Bertuzzi.
+            </span>
+            <span>
+                <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/EBEBEB/delivery-time.png" alt="delivery-time"/>
+                Tempo de Leitura: 5 minutos.
+            </span>
+            <span>
+                <img width="20" height="20" src="https://img.icons8.com/windows/32/EBEBEB/calendar.png" alt="calendar"/>
+                Data de Publicação: 24 de fevereiro de 2024.
+            </span>
+            <!-- ... (outros ícones e informações) -->
+            <div class="tags">
+                <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/EBEBEB/price-tag.png" alt="price-tag"/>
+                Tags: <span>Julia</span>, <span>Coding</span>, <span>Programming</span></div>
+        </div>
+    </header>
+
+    <!-- Corpo da postagem -->
+    <article>
+        <!-- ... (conteúdo do artigo) -->
+        <p>
+            Mover e organizar arquivos são tarefas essenciais para profissionais que lidam diariamente com dados. Em ambientes como Julia, a escolha das ferramentas certas pode fazer toda a diferença na eficiência do processo.</p>Neste contexto, a biblioteca FilePaths surge como uma solução intuitiva e eficaz para a manipulação de caminhos de arquivos em Julia. Este artigo visa orientar sobre a utilização do pacote FilePaths, proporcionando uma visão abrangente desde a sua instalação até exemplos práticos de como mover arquivos entre diretórios. <p>Ao explorarmos as funcionalidades desta biblioteca, os profissionais que trabalham com dados encontrarão uma ferramenta valiosa para simplificar suas operações diárias, permitindo-lhes focar em aspectos mais cruciais de seus projetos.</p>
+        </p>
+        <p>
+        <strong>Instalando o pacote:</strong> Para usar o pacote <span class="blue-text">FilePaths</span>, é necessário instalá-lo primeiro. O comando abaixo pode ser usado para instalar o pacote: 
+
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    <span class="function">using Pkg</span> Pkg.add("FilePaths")<br>
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+
+        <p>
+            using <span class="blue-text">FilePaths</span>: Esta linha está incluindo o módulo FilePaths, que fornece funcionalidades relacionadas a manipulação de caminhos de arquivos.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    <span class="function">pasta = "C:/users/..."<br>
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Aqui, está sendo atribuído um caminho de diretório à variável <strong>pasta</strong>. Este é o diretório onde os arquivos serão analisados e movidos.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    <span class="function">for arquivo in readdir(pasta)<br>
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Um <span class="blue-text">loop</span> <i>for</i> é iniciado para iterar sobre cada arquivo no diretório especificado por pasta. A função <i>readdir</i> é usada para obter a lista de arquivos no diretório.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    <span class="function">if occursin(".xlsx", arquivo)<br>
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Este bloco <i>if</i> verifica se o nome do arquivo contém a substring "<span class="blue-text">.xlsx</span>". Isso é usado para garantir que apenas arquivos Excel sejam considerados.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <pre><code>
+                    <span class="function">if occursin("Jan", arquivo)<br>
+                        <span class="function">mv(joinpath(pasta, arquivo), joinpath(pasta, "Jan", arquivo))<br>
+                </pre></code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Dentro do primeiro bloco <i>if</i>, há um segundo bloco <i>if</i> que verifica se a substring "<span class="blue-text">Jan</span>" está presente no nome do arquivo. Se for verdadeiro, o arquivo será movido para uma pasta chamada "<span class="blue-text">Jan</span>" dentro do diretório original.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <pre><code>
+                    <span class="function">if occursin("Fev", arquivo)<br>
+                        <span class="function">mv(joinpath(pasta, arquivo), joinpath(pasta, "Fev", arquivo))<br>
+                </pre></code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Se a condição anterior não for atendida, este bloco <i>elseif</i> verifica se a substring "<span class="blue-text">Fev</span>" está presente no nome do arquivo. Se for verdadeiro, o arquivo será movido para uma pasta chamada "<span class="blue-text">Fev</span>" dentro do diretório original.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <pre><code>
+                    <span class="function">if occursin("Mar", arquivo)<br>
+                        <span class="function">mv(joinpath(pasta, arquivo), joinpath(pasta, "Mar", arquivo))<br>
+                </pre></code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Similar ao bloco anterior, este bloco <i>elseif</i> verifica se a substring "<span class="blue-text">Mar</span>" está presente no nome do arquivo. Se for verdadeiro, o arquivo será movido para uma pasta chamada "<span class="blue-text">Mar</span>" dentro do diretório original.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    <span class="function">end<br>
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Este <i>end</i> marca o fim das condições dentro do <span class="blue-text">loop</span> <i>for</i>.
+        </p>
+
+        <div class="code-container">
+            <div class="code-header">
+                <pre><code class="language-julia">
+                    <code>
+                        using FilePaths
+                        
+                        pasta = "C:/users/..."
+        
+                        for arquivo in readdir(pasta)
+                            if occursin(".xlsx", arquivo)
+                                if occursin("Jan", arquivo)
+                                    # mover para a pasta de janeiro
+                                    mv(joinpath(pasta, arquivo), joinpath(pasta, "Jan", arquivo))
+                                elseif occursin("Fev", arquivo)
+                                    # mover para a pasta de fevereiro
+                                    mv(joinpath(pasta, arquivo), joinpath(pasta, "Fev", arquivo))
+                                elseif occursin("Mar", arquivo)
+                                    # mover para a pasta de março
+                                    mv(joinpath(pasta, arquivo), joinpath(pasta, "Mar", arquivo))
+                                end
+                            end
+                        end
+                    </code>
+                </pre>
+
+                    </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            <strong>Código na íntegra</strong>
+        </p>
+        <p>
+           <strong>Conclusão:</strong> A facilidade de uso proporcionada por essa biblioteca permite que você concentre seus esforços em aspectos mais essenciais do seu trabalho, economizando tempo e reduzindo a complexidade associada às operações de manipulação de arquivos.<p>Ao longo deste artigo, exploramos a instalação do pacote FilePaths e fornecemos um exemplo prático de como mover arquivos entre diretórios de maneira eficiente.</p> <p>Lembre-se de que a versatilidade e a simplicidade oferecidas por esta biblioteca podem ser estendidas para diversas situações, tornando-a uma ferramenta valiosa para profissionais que lidam com dados em seu cotidiano.</p>
+        </p>
+        <!-- ... -->
+    </article>
+    <script src="post1.js"></script>
+    <footer>
+        <!-- Rodapé com informações adicionais, como data de publicação, categorias, etc. -->
+        <p>&copy; 2024 jlCoder's. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+
+
+                

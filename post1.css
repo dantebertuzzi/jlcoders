@@ -1,0 +1,151 @@
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.meta-info {
+    margin-top: 20px;
+    color: darkgray;
+}
+
+.tags span {
+    margin-right: 5px;
+}
+
+article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Adicionando destaque de cor para as funções dos códigos */
+.function {
+    color: #66d9ef;
+}
+
+.keyword {
+    color: #f92672;
+}
+
+/* ... */
+
+/* ... */
+
+/* Estilizando a barra de cópia e contagens de linha */
+.code-container {
+    position: relative;
+    background-color: #333;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    border-radius: 8px; /* Adicionando bordas arredondadas */
+    align-items: flex-start; /* Ajustando o alinhamento vertical */
+    justify-content: flex-end; /* Alinhando o conteúdo à direita */
+    text-align: left;
+}
+
+.code-header {
+    position: relative;
+    flex-grow: 1;
+}
+
+.copy-icon {
+    margin-right: 0px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Alinha o ícone verticalmente ao texto */
+    transition: transform 0.2s ease; /* Adicionando transição de transformação */
+}
+
+.copy-icon:hover {
+    transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+}
+
+.copy-icon img {
+    width: 24px; /* Ajuste conforme necessário */
+    height: 24px; /* Ajuste conforme necessário */
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Adicionando indentação ao código */
+code {
+    padding-left: 20px; /* Valor ajustável para o recuo desejado */
+}
+
+.image-container {
+    width: 800px; /* Largura desejada para o layout retangular */
+    height: 400px; /* Altura desejada para o layout retangular */
+    overflow: hidden; /* Garante que a imagem não ultrapasse as bordas do contêiner */
+    margin: 0 auto; /* Adiciona margens automáticas para centralizar o container horizontalmente */
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém a proporção da imagem e a cobre completamente */
+    display: block;
+}
+
+footer {
+    background-color:#1a1a1a;
+    color:#ffffff;
+    padding-top:3em;
+    font-family: monospace;
+    text-align: center;
+  }
+
+  .blue-text {
+    color: rgb(108, 184, 255);
+}
+
+.language-julia {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    line-height: 1.5;
+    overflow-x: auto;
+    margin-bottom: 0px; /* ou qualquer valor desejado */
+}
+
+/* Adicione esta parte se quiser destacar as palavras-chave */
+.language-julia .keyword {
+    color: #007f00;
+    font-weight: bold;
+}
+
+/* Adicione esta parte se quiser destacar as strings */
+.language-julia .string {
+    color: #c41a16;
+}
+
+/* Typewriter effect for title */
+h1 {
+    background-color:#1a1a1a;
+    color:#ffffff;
+    padding-top:3em;
+    font-family: monospace;
+  }
+  
+  * { color:#fff; text-decoration: none;}
+
+/* ... */

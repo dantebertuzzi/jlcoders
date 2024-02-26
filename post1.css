@@ -16,7 +16,12 @@ header img {
     height: auto;
 }
 
-h1, h2 {
+h1 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+h2 {
     text-align: center;
     margin: 10px 0;
 }
@@ -51,38 +56,39 @@ article {
 
 /* Estilizando a barra de cópia e contagens de linha */
 .code-container {
-    position: relative;
     background-color: #333;
-    padding: 10px;
-    margin-top: 10px;
-    display: flex;
-    border-radius: 8px; /* Adicionando bordas arredondadas */
-    align-items: flex-start; /* Ajustando o alinhamento vertical */
-    justify-content: flex-end; /* Alinhando o conteúdo à direita */
-    text-align: left;
-}
-
-.code-header {
+    border-radius:  5px;
+    border:  1px solid #666666;
+    padding:  0px;
+    overflow-x: auto;
     position: relative;
-    flex-grow: 1;
-}
-
-.copy-icon {
-    margin-right: 0px;
+    margin:  0px;
+  }
+  
+  .code-header {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #cccccc;
+    font-size: large;
+    text-align: left;
+  }
+  
+  .copy-icon {
+    position: absolute;
+    top:  10px;
+    right:  10px;
     cursor: pointer;
-    display: flex;
-    align-items: center; /* Alinha o ícone verticalmente ao texto */
-    transition: transform 0.2s ease; /* Adicionando transição de transformação */
-}
+  }
+  
+  .copy-icon img {
+    width:  24px;
+    height:  24px;
+  }
+  
 
 .copy-icon:hover {
     transform: scale(1.1); /* Efeito de escala ao passar o mouse */
-}
-
-.copy-icon img {
-    width: 24px; /* Ajuste conforme necessário */
-    height: 24px; /* Ajuste conforme necessário */
-    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
 }
 
 /* Adicionando indentação ao código */

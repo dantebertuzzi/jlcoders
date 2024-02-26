@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>
-        <a href="https://dantebertuzzi.github.io/jlcoders/" class="typewrite" data-period="2000" data-type='[ "jlCoders", "julia para business.", "julia para ciência de dados.", "julia para machine learning." ]'>
+        <a href="/index.html" class="typewrite" data-period="2000" data-type='[ "jlCoders", "julia para business.", "julia para ciência de dados.", "julia para machine learning." ]'>
             <span class="wrap"></span>
         </a>
     </h1>
@@ -19,7 +19,7 @@
     <header>
         <div class="image-container">
             <!-- Incluindo imagem relacionada à matéria -->
-            <img src="https://raw.githubusercontent.com/dantebertuzzi/jlcoders/main/post1.png" alt="Imagem da Matéria" class="header-image">
+            <img src="/posts/img/post1.png" alt="Imagem da Matéria" class="header-image">
         </div>
         <!-- Título da postagem -->
         <h1>COMO USAR O PACOTE FILEPATHS PARA MOVER ARQUIVOS EM JULIA?</h1>
@@ -53,15 +53,21 @@
             Mover e organizar arquivos são tarefas essenciais para profissionais que lidam diariamente com dados. Em ambientes como Julia, a escolha das ferramentas certas pode fazer toda a diferença na eficiência do processo.</p>Neste contexto, a biblioteca FilePaths surge como uma solução intuitiva e eficaz para a manipulação de caminhos de arquivos em Julia. Este artigo visa orientar sobre a utilização do pacote FilePaths, proporcionando uma visão abrangente desde a sua instalação até exemplos práticos de como mover arquivos entre diretórios. <p>Ao explorarmos as funcionalidades desta biblioteca, os profissionais que trabalham com dados encontrarão uma ferramenta valiosa para simplificar suas operações diárias, permitindo-lhes focar em aspectos mais cruciais de seus projetos.</p>
         </p>
         <p>
-        <strong>Instalando o pacote:</strong> Para usar o pacote <span class="blue-text">FilePaths</span>, é necessário instalá-lo primeiro. O comando abaixo pode ser usado para instalar o pacote: 
-
+        <strong>Instalando o pacote:</strong> Para usar o pacote FilePaths, é necessário instalá-lo primeiro. O comando abaixo pode ser usado para instalar o pacote: 
         </p>
+        <p><strong>
+            Arquivos necessários:
+        </p></strong>
+        <div class="header-image">
+            <!-- Incluindo imagem relacionada à matéria -->
+            <img src="/posts/img/post1_exemplo.png" alt="Imagem da Matéria">
+        </div>
 
         <!-- CODE CONTAINER -->
         <div class="code-container">
             <div class="code-header">
                 <code>
-                    <span class="function">using Pkg</span> Pkg.add("FilePaths")<br>
+                    using Pkg Pkg.add("FilePaths")
                 </code>
             </div>
             <span class="copy-icon" onclick="copyCode(this)">
@@ -71,14 +77,14 @@
         </div>
 
         <p>
-            using <span class="blue-text">FilePaths</span>: Esta linha está incluindo o módulo FilePaths, que fornece funcionalidades relacionadas a manipulação de caminhos de arquivos.
+            using FilePaths: Esta linha está incluindo o módulo FilePaths, que fornece funcionalidades relacionadas a manipulação de caminhos de arquivos.
         </p>
 
         <!-- CODE CONTAINER -->
         <div class="code-container">
             <div class="code-header">
                 <code>
-                    <span class="function">pasta = "C:/users/..."<br>
+                    using FilePaths
                 </code>
             </div>
             <span class="copy-icon" onclick="copyCode(this)">
@@ -87,14 +93,14 @@
             
         </div>
         <p>
-            Aqui, está sendo atribuído um caminho de diretório à variável <strong>pasta</strong>. Este é o diretório onde os arquivos serão analisados e movidos.
+            Importa o pacote FilePaths, que fornece funcionalidades para manipulação de caminhos de arquivo.
         </p>
 
         <!-- CODE CONTAINER -->
         <div class="code-container">
             <div class="code-header">
                 <code>
-                    <span class="function">for arquivo in readdir(pasta)<br>
+                    pasta = "C:/users/your_username/your_directory"
                 </code>
             </div>
             <span class="copy-icon" onclick="copyCode(this)">
@@ -103,14 +109,14 @@
             
         </div>
         <p>
-            Um <span class="blue-text">loop</span> <i>for</i> é iniciado para iterar sobre cada arquivo no diretório especificado por pasta. A função <i>readdir</i> é usada para obter a lista de arquivos no diretório.
+            Especifica o caminho completo para o diretório que contém os arquivos Excel. Substitua "C:/users/your_username/your_directory" pelo caminho real no qual você deseja organizar seus arquivos.
         </p>
 
         <!-- CODE CONTAINER -->
         <div class="code-container">
             <div class="code-header">
                 <code>
-                    <span class="function">if occursin(".xlsx", arquivo)<br>
+                    months = Dict("Jan" => "Jan", "Fev" => "Fev", "Mar" => "Mar")
                 </code>
             </div>
             <span class="copy-icon" onclick="copyCode(this)">
@@ -119,102 +125,171 @@
             
         </div>
         <p>
-            Este bloco <i>if</i> verifica se o nome do arquivo contém a substring "<span class="blue-text">.xlsx</span>". Isso é usado para garantir que apenas arquivos Excel sejam considerados.
+            Define um dicionário associando os nomes dos meses (por exemplo, "Jan", "Fev", "Mar") aos nomes das pastas correspondentes. Isso será usado para organizar os arquivos.
         </p>
 
         <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    for arquivo in readdir(pasta)
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Itera sobre todos os arquivos no diretório especificado.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    if occursin(".xlsx", arquivo)
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Verifica se o arquivo atual tem a extensão ".xlsx".
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    for (month, folder) in months
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Itera sobre o dicionário de meses e pastas.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    if occursin(month, arquivo)
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Verifica se o nome do mês está presente no nome do arquivo.
+        </p>
+
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    dest_path = joinpath(pasta, folder, basename(arquivo))
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Constrói o caminho de destino para onde o arquivo será movido. Isso combina o caminho do diretório principal (pasta), o nome da pasta correspondente ao mês (folder), e o nome do arquivo original (basename(arquivo)).
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    if !isdir(dirname(dest_path)) mkdir(dirname(dest_path)) end
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Verifica se o diretório de destino existe; se não existir, cria-o. Isso garante que haja uma pasta para cada mês.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    mv(joinpath(pasta, arquivo), dest_path)
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Move o arquivo para o diretório de destino especificado.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    break
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            Sai do loop interno assim que o arquivo é movido para evitar verificações desnecessárias para os meses restantes.
+        </p>
+
+
         <div class="code-container">
             <div class="code-header">
                 <pre><code>
-                    <span class="function">if occursin("Jan", arquivo)<br>
-                        <span class="function">mv(joinpath(pasta, arquivo), joinpath(pasta, "Jan", arquivo))<br>
-                </pre></code>
-            </div>
-            <span class="copy-icon" onclick="copyCode(this)">
-                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
-            </span>
-            
-        </div>
-        <p>
-            Dentro do primeiro bloco <i>if</i>, há um segundo bloco <i>if</i> que verifica se a substring "<span class="blue-text">Jan</span>" está presente no nome do arquivo. Se for verdadeiro, o arquivo será movido para uma pasta chamada "<span class="blue-text">Jan</span>" dentro do diretório original.
-        </p>
-
-        <!-- CODE CONTAINER -->
-        <div class="code-container">
-            <div class="code-header">
-                <pre><code>
-                    <span class="function">if occursin("Fev", arquivo)<br>
-                        <span class="function">mv(joinpath(pasta, arquivo), joinpath(pasta, "Fev", arquivo))<br>
-                </pre></code>
-            </div>
-            <span class="copy-icon" onclick="copyCode(this)">
-                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
-            </span>
-            
-        </div>
-        <p>
-            Se a condição anterior não for atendida, este bloco <i>elseif</i> verifica se a substring "<span class="blue-text">Fev</span>" está presente no nome do arquivo. Se for verdadeiro, o arquivo será movido para uma pasta chamada "<span class="blue-text">Fev</span>" dentro do diretório original.
-        </p>
-
-        <!-- CODE CONTAINER -->
-        <div class="code-container">
-            <div class="code-header">
-                <pre><code>
-                    <span class="function">if occursin("Mar", arquivo)<br>
-                        <span class="function">mv(joinpath(pasta, arquivo), joinpath(pasta, "Mar", arquivo))<br>
-                </pre></code>
-            </div>
-            <span class="copy-icon" onclick="copyCode(this)">
-                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
-            </span>
-            
-        </div>
-        <p>
-            Similar ao bloco anterior, este bloco <i>elseif</i> verifica se a substring "<span class="blue-text">Mar</span>" está presente no nome do arquivo. Se for verdadeiro, o arquivo será movido para uma pasta chamada "<span class="blue-text">Mar</span>" dentro do diretório original.
-        </p>
-
-        <!-- CODE CONTAINER -->
-        <div class="code-container">
-            <div class="code-header">
-                <code>
-                    <span class="function">end<br>
-                </code>
-            </div>
-            <span class="copy-icon" onclick="copyCode(this)">
-                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
-            </span>
-            
-        </div>
-        <p>
-            Este <i>end</i> marca o fim das condições dentro do <span class="blue-text">loop</span> <i>for</i>.
-        </p>
-
-        <div class="code-container">
-            <div class="code-header">
-                <pre><code class="language-julia">
-                    <code>
                         using FilePaths
-                        
-                        pasta = "C:/users/..."
-        
+
+                        # Specify the full path to the directory containing the Excel files
+                        pasta = "C:/users/your_username/your_directory"
+
+                        # Define the months and their corresponding folder names
+                        months = Dict("Jan" => "Jan", "Fev" => "Fev", "Mar" => "Mar")
+
+                        # Iterate over all files in the directory
                         for arquivo in readdir(pasta)
                             if occursin(".xlsx", arquivo)
-                                if occursin("Jan", arquivo)
-                                    # mover para a pasta de janeiro
-                                    mv(joinpath(pasta, arquivo), joinpath(pasta, "Jan", arquivo))
-                                elseif occursin("Fev", arquivo)
-                                    # mover para a pasta de fevereiro
-                                    mv(joinpath(pasta, arquivo), joinpath(pasta, "Fev", arquivo))
-                                elseif occursin("Mar", arquivo)
-                                    # mover para a pasta de março
-                                    mv(joinpath(pasta, arquivo), joinpath(pasta, "Mar", arquivo))
+                                for (month, folder) in months
+                                    if occursin(month, arquivo)
+                                        # Construct the destination path
+                                        dest_path = joinpath(pasta, folder, basename(arquivo))
+                                        
+                                        # Check if the destination directory exists, create it if not
+                                        if !isdir(dirname(dest_path))
+                                            mkdir(dirname(dest_path))
+                                        end
+                                        
+                                        # Move the file to the appropriate folder
+                                        mv(joinpath(pasta, arquivo), dest_path)
+                                        break  # Exit the loop once the file is moved
+                                    end
                                 end
                             end
                         end
-                    </code>
-                </pre>
-
-                    </code>
+                </pre></code>
             </div>
             <span class="copy-icon" onclick="copyCode(this)">
                 <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
@@ -224,9 +299,16 @@
         <p>
             <strong>Código na íntegra</strong>
         </p>
-        <p>
+        <p>Esse código faz o seguinte: </p>
+
+        <ol>
+            <li>Itera sobre todos os arquivos no diretório especificado.</li>
+            <li>Verifica se um arquivo é um arquivo do Excel (.xlsx).</li>
+            <li>Verifica se o nome do arquivo contém um nome de mês (por exemplo, "Jan", "Fev", "Mar").</li>
+            <li>Move o arquivo para a pasta do mês correspondente, criando a pasta se ela não existir.</li>
+            <li>Lembre-se de substituir pelo caminho real para o diretório."C:/users/your_username/your_directory"</li>
+        </ol>
            <strong>Conclusão:</strong> A facilidade de uso proporcionada por essa biblioteca permite que você concentre seus esforços em aspectos mais essenciais do seu trabalho, economizando tempo e reduzindo a complexidade associada às operações de manipulação de arquivos.<p>Ao longo deste artigo, exploramos a instalação do pacote FilePaths e fornecemos um exemplo prático de como mover arquivos entre diretórios de maneira eficiente.</p> <p>Lembre-se de que a versatilidade e a simplicidade oferecidas por esta biblioteca podem ser estendidas para diversas situações, tornando-a uma ferramenta valiosa para profissionais que lidam com dados em seu cotidiano.</p>
-        </p>
         <!-- ... -->
     </article>
     <script src="post1.js"></script>
@@ -236,6 +318,3 @@
     </footer>
 </body>
 </html>
-
-
-                

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Definindo metadados da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluindo folhas de estilo -->
+    <link rel="stylesheet" href="post1.css">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/dantebertuzzi/jlcoders/main/jlcoders_icon.png">
+    <!-- Definindo o título da página -->
+    <title>jlCoder's | Removendo espaçamentos extras</title>
+</head>
+<body>
+    <h1>
+        <a href="/index.html" class="typewrite" data-period="2000" data-type='[ "jlCoders", "julia para business.", "julia para ciência de dados.", "julia para machine learning." ]'>
+            <span class="wrap"></span>
+        </a>
+    </h1>
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="image-container">
+            <!-- Incluindo imagem relacionada à matéria -->
+            <img src="https://raw.githubusercontent.com/dantebertuzzi/jlcoders/main/_7dd29d9b-39d9-454a-8fca-abb860164332.jpg" alt="Imagem da Matéria" class="header-image">
+        </div>
+        <!-- Título da postagem -->
+        <h1>COMO REMOVER ESPAÇAMENTOS DUPLOS OU MAIS COM UM SIMPLES CÓDIGO EM JULIA? </h1>
+        <!-- Subtítulo da postagem -->
+        <h2>Eliminar espaçamentos duplos ou mais de um texto pode ser uma tarefa árdua, <br>especialmente quando lidamos com grandes volumes de dados. <br>No entanto, a linguagem de programação Julia oferece uma solução eficiente <br>e elegante para esse desafio.</h2>
+        <!-- Informações sobre o autor, tempo de leitura e data de publicação -->
+        <div class="meta-info">
+            <span>
+                <img width="20" height="20" src="https://img.icons8.com/glyph-neue/64/EBEBEB/user--v1.png" alt="user--v1"/>
+                Autor: Dante Bertuzzi.
+            </span>
+            <span>
+                <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/EBEBEB/delivery-time.png" alt="delivery-time"/>
+                Tempo de Leitura: 2 minutos.
+            </span>
+            <span>
+                <img width="20" height="20" src="https://img.icons8.com/windows/32/EBEBEB/calendar.png" alt="calendar"/>
+                Data de Publicação: 29 de fevereiro de 2024.
+            </span>
+            <!-- ... (outros ícones e informações) -->
+            <div class="tags">
+                <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/EBEBEB/price-tag.png" alt="price-tag"/>
+                Tags: <span>Julia</span>, <span>Coding</span>, <span>Programming</span></div>
+        </div>
+    </header>
+
+    <!-- Corpo da postagem -->
+    <article>
+        <!-- ... (conteúdo do artigo) -->
+        <p>
+            Este trecho de código Julia demonstra como remover espaços extras de uma cadeia de caracteres e substituí-los por um único espaço. Vamos detalhar o código passo a passo:</p>
+        </p>
+       
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    texto = " textando se o  texto com   mais espaços     será refeito  apenas      com um   espaço  "
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+
+        <p>
+            Atribuição de variável: A variável texto é atribuída com uma string que contém espaços extras entre as palavras.
+        </p>
+
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    novo_texto = join(split(texto), " ")
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+        <li><strong>Função split</strong>: A função split é chamada com texto como argumento. Ela divide a string texto em um array de strings, usando espaços em branco como delimitadores. Isso significa que cada palavra e espaço extra será um elemento separado no array resultante.</li>
+        <li><strong>Função join</strong>: A função join é chamada com o array resultante da função split e uma string contendo um espaço (" ") como argumentos. Ela junta todos os elementos do array em uma única string, usando o espaço fornecido como delimitador entre os elementos. Isso efetivamente remove todos os espaços extras, deixando apenas um espaço entre as palavras.</li>
+        <li><strong>Atribuição de variável</strong>: A variável novo_texto é atribuída com o resultado da função join, que é a string com espaços extras removidos.</li>
+        </p>
+
+        
+        <!-- CODE CONTAINER -->
+        <div class="code-container">
+            <div class="code-header">
+                <code>
+                    println(novo_texto)
+                </code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            <li><strong>Função println</strong>: A função println é chamada com novo_texto como argumento. Ela imprime a string novo_texto na saída padrão (geralmente o terminal ou console) seguida por uma quebra de linha. Isso permite visualizar o resultado do processamento da string original.</li>
+        </p>
+
+        <div class="code-container">
+            <div class="code-header">
+                <pre><code>
+                    # remover espaçamento duplo ou mais
+                    texto = " textando se o  texto com   mais espaços     será refeito  apenas      com um   espaço  "
+                    novo_texto = join(split(texto), " ")
+                    println(novo_texto)
+                </pre></code>
+            </div>
+            <span class="copy-icon" onclick="copyCode(this)">
+                <img src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/copy--v1.png" alt="Copy Icon">
+            </span>
+            
+        </div>
+        <p>
+            <strong>Código na íntegra</strong>
+        </p>
+           <strong>Conclusão:</strong> Resumindo, este código remove espaços extras de uma string, deixando apenas um espaço entre as palavras, e imprime o resultado.
+
+        <!-- ... -->
+    </article>
+    <script src="post1.js"></script>
+    <footer>
+        <!-- Rodapé com informações adicionais, como data de publicação, categorias, etc. -->
+        <p>&copy; 2024 jlCoder's. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+
+
+                
